@@ -422,46 +422,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class='list-h'>
         
           
-            <a href="/v4/getting-started/"
+            <a href="/categories/"
               
               
-              id="v4getting-started">
-              <p>文档</p>
+              id="categories">
+              <p>归档</p>
             </a>
           
-            <a href="/faqs/"
+            <a href="/tags/"
               
               
-              id="faqs">
-              <p>帮助</p>
+              id="tags">
+              <p>标签</p>
             </a>
           
-            <a href="/examples/"
+            <a target="_blank" rel="noopener" href="https://github.com/Egdon"
               
               
-              id="examples">
-              <p>示例</p>
-            </a>
-          
-            <a href="/contributors/"
-              
-              
-              id="contributors">
-              <p>社区</p>
-            </a>
-          
-            <a href="/archives/"
-              
-              
-              id="archives">
-              <p>博客</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
-              
-              
-              id="https:githubcomvolantis-xhexo-theme-volantis">
-              <p>源码</p>
+              id="https:githubcomEgdon">
+              <p>github</p>
             </a>
           
         
@@ -669,6 +648,22 @@ Qu...
       
         <div class="aplayer-container">
           
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='6663555598'
+      list-folded='true'>
+    </meting-js>
+  
 
 
         </div>
@@ -990,22 +985,6 @@ var loadCSS = function( href, before, media, attributes ){
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default ' href=https://y.music.163.com/m/playlist?id=141995264&amp;userid=115141831&amp;creatorId=115141831
-        
-        
-        
-        
-          id="https:ymusic163commplaylist?id=141995264&amp;userid=115141831&amp;creatorId=115141831"
-        >
-        <i class='fa fa-music fa-spin fa-fw'></i> Music
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
       <a class='vlts-menu fix-cursor-default ' href=https://github.com/Egdon
         
         
@@ -1017,6 +996,32 @@ var loadCSS = function( href, before, media, attributes ){
       </a>
     </li>
   
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
         
       
     </ul>
@@ -1122,6 +1127,11 @@ var loadCSS = function( href, before, media, attributes ){
       }
       // 有音乐播放器 see: layout/_third-party/aplayer/script.ejs
       
+      if(volantis.APlayerLoaded){ // APlayer加载完成？
+        // 如果有aplayer，初始化一下
+        checkAPlayer();
+      }
+      
       return false; // 该行代码确保系统自带的右键菜单不会被调出
     }
     function hideMenu() {
@@ -1208,6 +1218,32 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '6663555598';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+  // APlayer 需要在  MetingJS 之前加载
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  window.volantis.APlayerLoaded=0 // APlayer加载完成状态
+  var checkAPlayer = setInterval(function () {
+    if (!window.APlayer) return // APlayer加载完成？
+	  if ($("#safearea").css("display")!="block") return // 文章内容加载完成？ see: source/css/first.styl
+    clearInterval(checkAPlayer)
+	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
+      window.volantis.APlayerLoaded=1 // APlayer加载完成
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+	  }
+  }, 2500) // 按照网速调节差分2.5s
+  // rightmenu see: layout/_partial/rightmenu.ejs
+
+  
+    loadScript("/js/aplayer.js")
+  
+
+</script>
 
 
 
