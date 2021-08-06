@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN zh-TW en">
+<html lang="-zh-CN -zh-TW -en">
   <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -24,7 +24,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021/7 - Egdon&#39;s blog</title>
+  <title>Archive: 2021/7 - Egdon&#39;s Blog</title>
   
 
   
@@ -37,7 +37,7 @@
 
   <!-- link -->
   
-    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png">
+    <link rel="shortcut icon" type='image/x-icon' href="https://egdin.oss-cn-hangzhou.aliyuncs.com/img/icon16x16.ico">
   
 
   <!-- import link -->
@@ -518,7 +518,7 @@ Qu...
         
         
         
-          <p><span id="jinrishici-sentence">Egdon's blog</span></p>
+          <p><span id="jinrishici-sentence">Egdon's Blog</span></p>
           <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
@@ -1117,7 +1117,7 @@ function setSearchService() {
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'http://egdondeblog.xyz' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1135,7 +1135,7 @@ function setSearchService() {
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'http://egdondeblog.xyz' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1157,7 +1157,7 @@ function setSearchService() {
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'http://example.com' + pv.getAttribute('data-path');
+          var url = 'http://egdondeblog.xyz' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
