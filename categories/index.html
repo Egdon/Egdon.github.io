@@ -126,8 +126,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
       </ul>
     </div>
 		<div class="nav-main">
@@ -475,7 +473,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 
-<div class='l_main'>
+<div class='l_main no_sidebar'>
   
     
       <div class='post-wrapper'>
@@ -494,54 +492,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div>
 <aside class='l_side'>
   
-  
-    
-    
-
-<section class="widget list shadow floatable desktop mobile">
-  
-  <header>
-    
-      <a href='/wiki/'><i class="fas fa-chevron-left fa-fw" aria-hidden="true"></i><span class='name'>Hexo Themes</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation">
-      
-        <li><a class="flat-box" title="/wiki/volantis/" href="/wiki/volantis/"
-          
-          
-          id="wikivolantis"
-          >
-          <div class='name'>
-            
-            Volantis for Hexo
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="/wiki/resume/" href="/wiki/resume/"
-          
-          
-          id="wikiresume"
-          >
-          <div class='name'>
-            
-            Resume for Hexo
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-  
-
-  
-
 
 </aside>
 
@@ -588,7 +538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       volume='0.7'
       loop='all'
       order='list'
-      fixed='false'
+      fixed='true'
       list-max-height='320px'
       server='netease'
       type='playlist'
@@ -1970,14 +1920,4 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 </html>
 <!--浏览器搞笑标题-->
 <script type="text/javascript" src="/js/FunnyTitle.js"></script>
-<!--动态线条背景-->
-<script type="text/javascript"
-color="220,220,220" opacity='0.7' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-</script>
-
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/fireworks.js"></script>
-
-
 
