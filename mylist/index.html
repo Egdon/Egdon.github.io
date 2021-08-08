@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -29,8 +25,6 @@
   <title>Egdon&#39;s Blog</title>
   
 
-  
-    <meta name="description" content="Egdon's Blog">
   
 
   <!-- feed -->
@@ -124,7 +118,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -395,7 +389,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper list search' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -456,7 +450,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -466,85 +460,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
+
 <div class='l_main'>
   
-  <section class="post-list">
-    
+    <section class="post-list">
       
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-          
-        
-      
-    
-    
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/31/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
       
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg'></a>
-        
-        <time>2021-07-31</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/31/hello-world/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
         
       
-    
-  </section>
+        
+      
+        
+      
+        
+      
+      
+        
+      
+    </section>
   
-    
-  
-
-
 </div>
 <aside class='l_side'>
   
@@ -763,7 +700,6 @@ Qu...
 </aside>
 
 
-
 		  
 		  <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
@@ -777,14 +713,14 @@ Qu...
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="full";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
