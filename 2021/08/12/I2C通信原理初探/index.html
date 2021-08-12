@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021/8 - Egdon&#39;s Blog</title>
+  <title>I2C通信原理初探 - Egdon&#39;s Blog</title>
+  
+    <meta name="keywords" content="嵌入式,通信原理,数电">
   
 
   
@@ -121,7 +121,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -702,7 +702,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -774,122 +774,310 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-      
+  <article class="article post white-box reveal md shadow floatable article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">
+      <h1 class="title">
         I2C通信原理初探
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        I2C通信原理初探对于I2C的使用，通常来说有两种实现方法，一种是利用单片机自带的硬件实现I2C，另外一个就是根据I2C协议和GPIO的输出，来实现软件I2C。虽然我没有实操过I2C，但是网上的很多巨佬都说硬件I2C巨坑，会有很多玄学问题，相比之下软件I2C会靠谱许多，于是就决定把软件I2C给办了。至于硬件I2C嘛.。。。嘛。。。有空再说！         
-其实想要用好I2C很简单，只需要...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg'></a>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg">
+    <p>Egdon</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-08-12</time>
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月12日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：9分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="I2C通信原理初探" data-path="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+<div class="new-meta-item comments-count">
+  
+  <a href="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">0</span>
+    <span class="leancloud-comments-count">&nbsp;条评论</span>
+  </a>
+</div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="I2C通信原理初探"><a href="#I2C通信原理初探" class="headerlink" title="I2C通信原理初探"></a>I2C通信原理初探</h2><p>对于I2C的使用，通常来说有两种实现方法，一种是利用单片机自带的硬件实现I2C，另外一个就是根据I2C协议和GPIO的输出，来实现软件I2C。虽然我没有实操过I2C，但是网上的很多巨佬都说硬件I2C巨坑，会有很多玄学问题，相比之下软件I2C会靠谱许多，于是就决定把软件I2C给办了。至于硬件I2C嘛.。。。嘛。。。有空再说！         </p>
+<p>其实想要用好I2C很简单，只需要上CSDN上扒一些代码移植移植就完事了。但是要是想真正用好I2C，个人认为理论基础也必须要过关，所以上代码之前，我们先来过一遍I2C的原理。         </p>
+<p>硬件的电气连接：</p>
+<img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213843855-1903098726.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213843855-1903098726.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img" style="zoom:80%;" />
+
+<p>I2C通信中，主机SDA端与从机SDA端相连，主机SCL端与从机SCL端相连，且必须共地，这样就完成了我们的电气连接。在I2C总线空闲时，SDA和SCL应该处于高电平，我们上百度一搜索就能发现参考电路有一个上拉电阻。但是不是意味着我们也要接一个上拉电阻呢，个人认为未必。因为接上拉电阻的前提是单片机的GPIO输出是开漏输出，但是对于MSP432来说，似乎根本没有在STM32中开漏输出和推挽输出的概念（至少我查文献是查不到的），因此我们连这个输出是不是开漏输出都搞不清楚，直接接上一个上拉电阻恐怕并非良策。针对该问题的解决方案是，输出低电平的时候使用单片机的输出模式输出低电平，输出高电平的时候使用单片机的输入上拉模式让总线处于高电平。有的人可能会问你这不是脱裤子放屁嘛，明明我可以只靠输出模式来拉高电平，搞那么复杂干什么？似乎很对，但是我们想一下I2C通信中，从机应答的时候是要主机交出SDA线的控制权的，那么这个时候主机在这根线输出高电平，从机在这根线输出低电平会导致什么后果？（我也不知道什么后果）亦或者说总线上有两个主机，那在一个主机空闲的时候用输出把电平拉高了，那另外一个主机想发起通信的时候他还能把电平拉低嘛？这种听起来就很危险的实验我没有做过，所以无从得知是否会有不良后果，但是如果我们可以通过上拉输入的方式来输出高电平，那是不是上面的矛盾都完全解决了呢？所以嘛，何乐而不为。         </p>
+<p>我们看到电气连接图中有时钟信号线，这意味着I2C通信是一个同步通信，有无时钟信号线是同步通信与异步通信的最主要的区别。         </p>
+<p>为了理解时钟线在信息传输中的作用，我举一个比较简单的例子：假设你是主机，我是从机，你的手上有一面红旗，我们编码：举起红旗代表1，放下红旗代表0，我们两个的位置相距很远无法交谈以至于你要用红旗来给我传输信息，那么，当你要给我传输信息”1111”时你会怎么做呢？有的人会说，那就连续举起四次红旗啊。但其实这样的想法是错误的，因为”举起”的动作前提必然是”放下”，如果你连续举起了四次红旗，在我看来，你是”举起-放下-举起-放下-举起-放下-举起”，按照编码规则，我认为你传输的信息应该是”1010101”，这样一来信息的传递就出现了误差。你一看，欸，多了三个零，那你一直举着红旗不就行了？这样一来你给我发送的信息必定只有1而没有0。但问题又来了，你一直举着红旗，我怎么知道你要给我传输的数据是”1111111”（7个1）还是”11”（2个1）还是其他位数的”11111…”呢？在你发出同样信息的前提下，我对你发出的信息的采样起始时间，采样频率决定了我接收到的信息是什么样的。         </p>
+<p>那如何确定信息采样的起始时间和采样频率，才能让我接收到的信息恰恰就是你想表达的信息呢？这里有两个解决方案：         </p>
+<p>方案1：         </p>
+<p>我和你都去买一块10块钱的电子手表，我们两个手表的时间都是一样地转动，我和你约定，在你作出某一个特定动作（随便什么都行）的一瞬间，我和你同时开始掐表计时，约定每隔5秒就对信息进行一次采样。那如果你要给我传输的第一个信息是0，你就在第一个5秒前放下红旗，到了第一个5秒的时刻，我一看，发现你是放下红旗，那么我就记录下一个0；如果你要给我传输的第二个信息是1，那就在第二个5秒前举起红旗，我一看，就能记录下一个1，以此类推。这里要注意的是，既然以及约定好了采样的时间点，那么在两个相邻时间点之间，我是没有必要看你做了什么动作的（可能是因为我比较懒x），你在这段时间可以干任何事情（比如说放松下手臂），只要在我采样的时间点你能够给我你想要给的信息就行。换句话说，信息只在某一个特定的时间点才进行传输，而不允许在相邻两个时间点之间进行传输，就算你心血来潮想要在这段时间内多传输几个比特的信息，也没有用，因为我根本不会看（就算看了我也不知道你是在休息还是在传递信息）。         </p>
+<p>方案2：         </p>
+<p>你去买多一面蓝旗，我们约定，当你举起蓝旗的瞬间，我就去看一下你拿红旗的手是举起还是放下，从而记录下1或0，这样也能够接收到准确的信息。         </p>
+<p>如果你以前对单片机的几种通信比较了解，那么你一定能够看出，我所描述的第一种通信方式就是异步通信，第二种通信方式就是同步通信。         </p>
+<p>就我个人理解，异步通信和同步通信都需要时钟，只不过异步通信的时钟是同时存在于主机和从机的”北京时间”，而同步通信的时钟是由主机单方面控制的”红绿灯”。         </p>
+<p>好，有了同步和异步通信的概念，我们就能够通过约定一系列的通信规则，来准确传输信息，这也就是我们所说的通信协议。I2C通信就是一种同步通信，而研究现有的同步通信的通信协议，是绝对少不了”时序图”这一概念的，所以在开始学习I2C协议前，我们先来了解一下两个时序图：</p>
+<p>1.方波时序图</p>
+<p><img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213911608-444942184.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213911608-444942184.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img"></p>
+<p>这样的时序图代表着信号线的电平在0和1之间反复横跳，按这种规律变化的信号线常常被人们用来传输时钟信号（类似于前面举起蓝旗又放下的例子）。由于实际器件是无法做到瞬时改变电压值的，所以在跳变沿的地方有时也会是一个斜线而不是一条垂直线。</p>
+<p>2.Either or (非此即彼)信号时序图</p>
+<p><img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213926235-1685110220.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213926235-1685110220.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img"></p>
+<p>可以看到，第二条信号的时序图有很多交叉，在同一时间点电平又上又下的，令人迷惑。但其实它的意思是，在”又上又下”的地方，你可以置高电平，或者也可以置低电平（不存在又高又低的电平，这里不是量子力学），而这个电平就代表着你想传输出去的信息。</p>
+<p>好，理解了这两个基本的时序图，我们就足以阅读I2C的时序图了。</p>
+<img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213951175-1631222463.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828213951175-1631222463.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img" style="zoom:80%;" />
+
+<p>首先我们来看信号的起始与终止的时序图：         </p>
+<p>观察时序图可以发现以下规律：         </p>
+<p>信号的起始：SCL高电平时，SDA产生一个下降沿         </p>
+<p>信号的终止：SCL高电平时，SDA产生一个上升沿         </p>
+<p>另外要记得，在I2C通讯的大部分过程中，SDA和SCL线的控制权都在主机手上（后面会提到从机控制的情况）。         </p>
+<p>接下来，我们看看数据是如何同步传输的：         </p>
+<img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828214009180-1400325927.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828214009180-1400325927.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img" style="zoom:80%;" />
+
+<p>首先我们来看信号的起始与终止的时序图：         </p>
+<p>观察时序图可以发现以下规律：         </p>
+<p>信号的起始：SCL高电平时，SDA产生一个下降沿         </p>
+<p>信号的终止：SCL高电平时，SDA产生一个上升沿         </p>
+<p>另外要记得，在I2C通讯的大部分过程中，SDA和SCL线的控制权都在主机手上（后面会提到从机控制的情况）。         </p>
+<p>接下来，我们看看数据是如何同步传输的：         </p>
+<img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828214029375-1429267137.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webicon/2060585-20200828214029375-1429267137.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img" style="zoom:80%;" />
+
+<p>对于I2C通信而言，可以无限制地传输字节，但是每一个字节的长度必须是8bit。我们知道I2C通信一种总线通信，一个总线上可能会挂有许多部从机，但每一个从机都不一定是同样功能的，我们希望一个主机调遣目标从机时不会对其他的从机产生影响，因此，主机在发起通信后，必须先发送地址位进行寻址，只有地址与主机输出相符的从机才会有响应，这个地址位一般是占用7bit。另外，主机还需要告诉从机自己是想对它进行读还是写的操作，因此还要再加多1bit存放该信息，其中”写”代表”0”，”读”代表”1”。这样一来，主机发送的第一字在发送完8位数据之后，就确定了应答的从机是哪一个、以及它的工作模式。         </p>
+<p>当完成一个字节的发送之后，需要有一个来自从机的响应告诉主机已经收到了信息。因为即使主机联系了从机要他去干活，但没准别人正在忙别的没看微信，也不知道你发了消息过来，如果从机没有收到主机的报文，那么后面主机的数据发送将毫无意义。因此，从机响应是必须的。具体的方法是，当8位数据传输完以后，主机继续控制SCL线，但释放SDA线（也就是用上拉输入置于高电平），SDA线的控制权交给从机，这时从机如果收到了信号，便会把SDA线拉低。SCL置高时，主机发现SDA变低电平了，就能够得知从机已经收到了数据，于是就可以继续发送下一个字节的信息了。如果从机没有响应，那主机只好重新发起通信。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://egdondeblog.xyz/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/>http://egdondeblog.xyz/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/money.jpg'>
+            
+          </div>
         </div>
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-12T22:06:44+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月12日</p>
+  </a>
 </div>
 
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>嵌入式</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>通信原理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E7%94%B5/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数电</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://egdondeblog.xyz/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/&title=I2C通信原理初探 - Egdon's Blog&summary="
+          
+          >
+          
+            <img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/QQ.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/QQ.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://egdondeblog.xyz/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/&title=I2C通信原理初探 - Egdon's Blog&summary="
+          
+          >
+          
+            <img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/QQzone.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/QQzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://egdondeblog.xyz/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/&title=I2C通信原理初探 - Egdon's Blog&summary="
+          
+          >
+          
+            <img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/weibo.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/qrcode.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/qrcode.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEWUlEQVR42u3aQXLjMAwEwPz/09kXuMIZQFQ21bw5sSmyqQMxha9v45HxhQAsWAMsWLAG2CuwX+X4OHH5/fTv6XO25v/puWDBggULFixYsGDvwj61oE+/OwX9CW7rRdjyAAsWLFiwYMGCBfsO7DbQ6TynBcfpQbf/H3uABQsWLFiwYMGC/VOwWxf0rUAeLFiwYMGCBQsWLNgmGN7aeDrSggMsWLBgwYIFCxbs/wHbbjS9qJ82ZmwXEK81bIAFCxYsWLBgwYJ9BLYNkP/q59oDLFiwYMGCBQsW7BXY6TgF3ypApt9/eoAFCxYsWLBgwYK9A/tUcJ0Gz2kB8lSg3c4PFixYsGDBggUL9i7sdAGn80znrzc6PJi4YAELFixYsGDBggX7Kuw0QE6/t/3ctgCZBuZgwYIFCxYsWLBg78BOL/qnF/Dp79t5t4Lz44MFCxYsWLBgwYIFewV2urD2ot8eaHpAxxf74QGABQsWLFiwYMGCfRd2a2Fpw8N2QB2DlC8EWLBgwYIFCxYs2Hdg0wt7GjinB5bOO4Yo4T+uDyxYsGDBggULFuyvgG2D7WlBsRW4p0F5ux+wYMGCBQsWLFiw78CmjRDbG542dLQFyVbhARYsWLBgwYIFC/Z3wbaNF+kGTp+39fytxpAfGzbAggULFixYsGDBvgLbNmi0hcdW4dA2bIzXCxYsWLBgwYIFC/YK7FOBd3pQ6cU9bcRIG0fSoBwsWLBgwYIFCxbsXdgWZtqg0Y62oHm6wAELFixYsGDBggX7Dmx7cW4bJ9rgefvgpo0h404YsGDBggULFixYsBXs02BtQD0NpKdBd71+sGDBggULFixYsK/CthftFmYKlAbzbcPxuEAACxYsWLBgwYIFuwr7VONGCjctBE7Xl34+LlTAggULFixYsGDBXoWdXqDTC/kWYArRHsDx/GDBggULFixYsGBfhZ2Cp0F0W5hMA/Np0B0XCGDBggULFixYsGBXYE8v9k8XEluNFu2LMj14sGDBggULFixYsHdhU4jt4DsNoKfBedtwcvwcsGDBggULFixYsFdg08aFNMDeWnjbCLL9eS3oBgsWLFiwYMGCBbsCOw2Gty7mbQC+FlSXLxRYsGDBggULFizYd2G3N9wG3lsH0xYq3+UACxYsWLBgwYIF+w5s2pjRBtHt97cbNtafAxYsWLBgwYIFC/YK7HRsbTgN1KeFyWONJGDBggULFixYsGCvwG5fkLcbNtrfp4VJetAfocGCBQsWLFiwYMFehU2h0oaPtjFiC/b0/20hAhYsWLBgwYIFC/Zd2OlG2g2kF/bTgqBdZxpwgwULFixYsGDBgv2bsFPAtlGkhar3DRYsWLBgwYIFC/a/hE2BTzeYgqSg7YFcKxDAggULFixYsGDBrjZsbDdYTOdLDzR9fh10gwULFixYsGDBgn0Etr0otxtIgbYaNtrg/PjFAwsWLFiwYMGCBXsF1tgdYMGCNcCCBWuAfXT8A2/sE6cJasBwAAAAAElFTkSuQmCC">
           </div>
-        
+        </div>
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/09/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
     
       
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
+        <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
+          
+            target="_blank" href="https://t.me/share/url?url=http://egdondeblog.xyz/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/&text=I2C通信原理初探 - Egdon's Blog"
+          
+          >
+          
+            <img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/telegram.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/telegram.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-          
-          <a class='avatar' href='/'><img src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg'></a>
-        
-        <time>2021-08-09</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/08/09/hello-world/'>
-            阅读全文
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/08/09/hello-world/'>
+          <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -897,217 +1085,28 @@ Qu...
     
     
 
-<section class="widget blogger shadow floatable desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Egdon</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Egdon's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="http://egdondeblog.xyz"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Egdon/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow floatable desktop mobile">
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 14px; color: #999">嵌入式</a> <a href="/tags/%E6%95%B0%E7%94%B5/" style="font-size: 14px; color: #999">数电</a> <a href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">通信原理</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2"><span class="toc-number">1.</span> <span class="toc-text">I2C通信原理初探</span></a></li></ol>
     </div>
   </section>
 
 
   
 
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>2 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/07/31'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>3k 字</div>
-        </div>
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Thu Aug 12 2021 22:09:01 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2021-08-12 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-08-12 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
 
 </aside>
+
 
 
 		  
@@ -1116,21 +1115,21 @@ Qu...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="I2C通信原理初探";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
