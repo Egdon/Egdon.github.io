@@ -404,6 +404,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
           
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://travellings.link/
+                  
+                  
+                  
+                    id="https:travellingslink"
+                  >
+                  <i class='fa fa-train fa-fw'></i>开往
+                </a>
+                
+              </li>
+            
+          
+          
 				</ul>
 			</div>
 <div id="tp-weather-widget"></div>
@@ -690,6 +706,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
             
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://travellings.link/
+                  
+                  
+                  
+                    id="https:travellingslink"
+                  >
+                  <i class='fa fa-train fa-fw'></i>开往
+                </a>
+                
+              </li>
+            
+          
+            
           </ul>
         </li>
 			</ul>
@@ -801,20 +833,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">
+        <img class='headimg' src='https://egdin.oss-cn-hangzhou.aliyuncs.com/posts/iic/connect.png'/>
+      </a>
+    </div>
+  
   
     
     <h2 class="article-title" >
       <a href="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">
-        I2C通信原理初探
+        I2C通信原理初探以及MSP432代码实现
       </a>
     </h2>
   
   <div class='md'>
     
-      
-        I2C通信原理初探对于I2C的使用，通常来说有两种实现方法，一种是利用单片机自带的硬件实现I2C，另外一个就是根据I2C协议和GPIO的输出，来实现软件I2C。虽然我没有实操过I2C，但是网上的很多巨佬都说硬件I2C巨坑，会有很多玄学问题，相比之下软件I2C会靠谱许多，于是就决定把软件I2C给办了。至于硬件I2C嘛.。。。嘛。。。有空再说！         
-其实想要用好I2C很简单，只需要...
-      
+      <p>之前有用过MPU6050的软件I2C,什么DMP自检不通过,零偏校准偏移,甚至还会因为杜邦线太长自检失败。种种玄学问题导致我长期以来对I2C有一种抵触心理(UART YYDS) 。但只靠UART一种通信方式注定活不长久(指电赛),所以趁着电赛延期好好把I2C通信捋一捋。</p>
     
   </div>
   
@@ -946,7 +981,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-      <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 14px; color: #999">嵌入式</a> <a href="/tags/%E6%95%B0%E7%94%B5/" style="font-size: 14px; color: #999">数电</a> <a href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">通信原理</a>
+      <a href="/tags/MSP432/" style="font-size: 14px; color: #999">MSP432</a> <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 14px; color: #999">嵌入式</a> <a href="/tags/%E6%95%B0%E7%94%B5/" style="font-size: 14px; color: #999">数电</a> <a href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">通信原理</a>
     </div>
   </section>
 
@@ -993,7 +1028,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>3k 字</div>
+          <div>3.9k 字</div>
         </div>
       
 
@@ -1005,7 +1040,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Aug 13 2021 19:14:08 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Fri Aug 13 2021 21:59:21 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2021-08-13 日</div>
           
         </div>
@@ -1116,7 +1151,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       list-max-height='320px'
       server='tencent'
       type='playlist'
-      id='8113505847'
+      id='8119290580'
       list-folded='true'>
     </meting-js>
   
@@ -1839,7 +1874,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   <script>
   let APlayerController = new Object();
-  APlayerController.id = '8113505847';  // 设定全局音乐播放ID
+  APlayerController.id = '8119290580';  // 设定全局音乐播放ID
   APlayerController.volume = '0.7';
   APlayerController.autoPlay = 'false';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
