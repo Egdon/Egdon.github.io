@@ -1008,7 +1008,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Aug 14 2021 12:05:20 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sat Aug 14 2021 12:40:54 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2021-08-14 日</div>
           
         </div>
@@ -2465,7 +2465,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
+        var banUrl = ["/artitalk/"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
