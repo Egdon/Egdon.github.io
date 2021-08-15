@@ -5,9 +5,7 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
+      <meta name="robots" content="noindex,follow">
     
   
   <!-- 渲染优化 -->
@@ -26,11 +24,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Egdon&#39;s Blog</title>
+  <title>标签：WEB - Egdon&#39;s Blog</title>
   
 
-  
-    <meta name="description" content="Egdon's Blog">
   
 
   <!-- feed -->
@@ -125,7 +121,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header always shadow floatable blur "  >
+<header id="l_header" class="l_header always shadow floatable blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -738,7 +734,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper  search' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -806,7 +802,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -816,36 +812,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
+
 <div class='l_main'>
   
+    
+      
   <section class="post-list">
     
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-          
-        
-          
         
           
         
@@ -903,103 +877,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">
-        <img class='headimg' src='https://egdin.oss-cn-hangzhou.aliyuncs.com/posts/iic/connect.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/">
-        I2C通信原理初探以及MSP432代码实现
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>之前有用过MPU6050的软件I2C,什么DMP自检不通过,零偏校准偏移,甚至还会因为杜邦线太长自检失败。种种玄学问题导致我长期以来对I2C有一种抵触心理(UART YYDS) 。但只靠UART一种通信方式注定活不长久(指电赛),所以趁着电赛延期好好把I2C通信捋一捋。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg'></a>
-        
-        <time>2021-08-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/12/I2C%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/09/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/author-icon2.jpg'></a>
-        
-        <time>2021-08-09</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/09/hello-world/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1007,6 +884,8 @@ Qu...
   
 
 
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -1227,7 +1106,6 @@ Qu...
 </aside>
 
 
-
 		  
 		  <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
@@ -1241,14 +1119,14 @@ Qu...
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="full";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
