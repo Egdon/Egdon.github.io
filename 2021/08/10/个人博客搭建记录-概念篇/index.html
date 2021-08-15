@@ -22,9 +22,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello World - Egdon&#39;s Blog</title>
+  <title>个人博客搭建记录-概念篇 - Egdon&#39;s Blog</title>
+  
+    <meta name="keywords" content="学习笔记,WEB">
   
 
+  
+    <meta name="description" content="一直想找个聚合平台,既能记录我每次的开发日志,学习笔记,还能满足简单的娱乐需求,放点歌单、影单、小游戏啥的。当然,现在市面上的大部分app都能满足我的需求,但把数据放在别人的平台上总有一种我的笔记不属于我自己的感觉,所以这样一个个人博客就应运而生了。截止今天,博客的各项功能已经完成的差不多了,就趁热打铁,记录一下搭建博客过程中碰到的概念、开发时遇到的问题、使用过的工具以及对应的指令。">
   
 
   <!-- feed -->
@@ -816,12 +820,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img class='headimg' src='https://egdin.oss-cn-hangzhou.aliyuncs.com/posts/blog_log/1220845-20200203230555915-25894001.png'/>
+      </a>
+    </div>
+  
   <div class="article-meta" id="top">
     
     
     
       <h1 class="title">
-        Hello World
+        个人博客搭建记录-概念篇
       </h1>
       <div class='new-meta-box'>
         
@@ -845,7 +855,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年8月9日</p>
+    <p>发布于：2021年8月10日</p>
   </a>
 </div>
 
@@ -856,13 +866,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：75字</p>
+      <p>字数：1.5k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：5分钟</p>
     </a>
   </div>
 
@@ -874,7 +884,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Hello World" data-path="/2021/08/09/hello-world/">
+      <div id="lc-pv" data-title="个人博客搭建记录-概念篇" data-path="/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -889,9 +899,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
 <div class="new-meta-item comments-count">
   
-  <a href="/2021/08/09/hello-world/#comments">
+  <a href="/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/08/09/hello-world/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/">0</span>
     <span class="leancloud-comments-count">&nbsp;条评论</span>
   </a>
 </div>
@@ -906,19 +916,46 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+  <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h3><p>​      一直想找个聚合平台,既能记录我每次的开发日志,学习笔记,还能满足简单的娱乐需求,放点歌单、影单、小游戏啥的。当然,现在市面上的大部分app都能满足我的需求,但把数据放在别人的平台上总有一种我的笔记不属于我自己的感觉,所以这样一个个人博客就应运而生了。截止今天,博客的各项功能已经完成的差不多了,就趁热打铁,记录一下搭建博客过程中碰到的概念、开发时遇到的问题、使用过的工具以及对应的指令。</p>
+<p>​        <div class="note warning"><p>本篇根据搭建博客的顺序,记录这之中遇到的一些概念和问题,主要用于个人回顾,可能没有太大参考价值。</p></div></p>
+<h3 id="2-域名"><a href="#2-域名" class="headerlink" title="2 域名"></a>2 域名</h3><p>​       搭建个人博客,让别人访问你的网站,首先你得有个域名。关于域名,wiki上的解释是:</p>
+<div class="note quote"><p>域名系统（英语：Domain Name System，缩写:DNS）是互联网互联网)的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p></div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>​    简单点说,IP地址全是数字记起来很麻烦,那就用熟悉的英文单词进行替代,但电脑路由器不认识域名,只认得IP啊，要怎么去获得对应的IP呢，这时候有了域名解析,去请求网络上的DNS服务器，让他们来告诉你这个域名对应的IP是多少。在国内,域名的购买几乎没有门槛。个人用户在阿里云购买域名只需要实名,而且价格还巨便宜(9元/年)</p>
+<p>​    关于域名的购买与设置,可以参考这篇文章。<br>​     <div class="note link green"><p><a href=https://zhuanlan.zhihu.com/p/103860494>个人博客第四篇——购买域名</a></p></div></p>
+<p>​    域名的购买与设置这块我没遇到啥问题,买就vans了,其他的供应商都给你办的妥妥的。</p>
+<h3 id="3-域名解析"><a href="#3-域名解析" class="headerlink" title="3 域名解析"></a>3 域名解析</h3><p>​          好的,域名我们有了,接下来就该把域名解析到我们的网站服务器上。刚刚提到,域名就是一个代号或者说方向标,它得指向你的网站内容。国内的域名解析服务商有很多,比较靠谱的还是”BAT”三巨头,以我使用的腾讯云为例。</p>
+<p>​       <img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/posts/blog_log/Snipaste_2021-08-15_20-09-09.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/posts/blog_log/Snipaste_2021-08-15_20-09-09.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" style="zoom:50%;" /></p>
+<p>看域名解析界面的记录类型,分别有CNAME、A、TXT，这里就着重整理一下CNAME记录和A记录。</p>
+<p>（原理参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/doggod/p/12257969.html"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/doggod/p/12257969.html">CNAME 别名记录</a></a>）</p>
+<h4 id="3-1-A记录"><a href="#3-1-A记录" class="headerlink" title="3.1 A记录"></a>3.1 A记录</h4><p>即Address记录，它不是一个IP或者一个域名，而是一种指向关系</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">域名 www.egdondeblog.com → 1.1.1.1</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>也就是当你访问这些域名的时候，DNS服务器上会通过A记录会帮你解析出相应的IP地址，以达到后续的访问</p>
+<h4 id="3-2-CNAME"><a href="#3-2-CNAME" class="headerlink" title="3.2 CNAME"></a>3.2 CNAME</h4><p>   Canonical Name ，别名记录，相当于给A记录中的域名起个小名，比如<strong><a target="_blank" rel="noopener" href="http://www.egdondeblog.com/">www.egdondeblog.com</a></strong>的小名就叫<strong><a target="_blank" rel="noopener" href="http://www.egdon.com/">www.egdon.com</a></strong>好了，然后CNAME记录也和A记录一样，是一种指向关系，把小名儿<strong><a target="_blank" rel="noopener" href="http://www.egdon.com/">www.egdon.com</a></strong>指向了<strong><a target="_blank" rel="noopener" href="http://www.egdondeblog.com/">www.egdondeblog.com</a></strong>，然后通过A记录，<strong><a target="_blank" rel="noopener" href="http://www.egdondeblog.com/">www.egdondeblog.com</a></strong>又指向了对应的IP：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.egdon.com → www.egdondeblog.com → 1.1.1.1</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>​    这样一来就能通过它的小名直接访问<strong>1.1.1.1</strong>了。</p>
+<p><strong>这时候有人问：这不多了一步嘛，不嫌麻烦？</strong></p>
+<p>假设这个时候我又想给原域名取几个小名,分别叫<strong><a target="_blank" rel="noopener" href="http://www.xx.com/">www.xx.com</a></strong>和<strong><a target="_blank" rel="noopener" href="http://www.yy.com/">www.yy.com</a></strong>那么存在下列指向关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">www.egdon.com → www.egdondeblog.com → 1.1.1.1</span><br><span class="line"></span><br><span class="line">www.xx.com → www.egdondeblog.com → 1.1.1.1</span><br><span class="line"></span><br><span class="line">www.yy.com → www.egdondeblog.com → 1.1.1.1</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+
+<p>突然服务器的IP地址因为一些不可描述的原因要换了，不再是<strong>1.1.1.1</strong>了，换成了<strong>2.2.2.2</strong>，这时候发现，只要把<strong><a target="_blank" rel="noopener" href="http://www.egdondeblog.com/">www.egdondeblog.com</a></strong>的指向修改一下即可：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.egdondeblog.com → 2.2.2.2</span><br></pre></td></tr></table></figure>
+
+<p>这时候又会发现，原来他的小名不需要做更改，直接就能访问服务器，因为他们都只指向了<strong><a target="_blank" rel="noopener" href="http://www.egdondeblog.com/">www.egdondeblog.com</a></strong>，服务器IP改没改它们不管。</p>
+<p>如果不用CNAME,直接做A记录就会出现以下情况</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">www.egdon.com → 1.1.1.1</span><br><span class="line">www.egdondeblog.com → 1.1.1.1</span><br><span class="line">www.xx.com → 1.1.1.1</span><br><span class="line">www.yy.com → 1.1.1.1</span><br></pre></td></tr></table></figure>
+
+<p>发没发现,这样其实更加麻烦。</p>
+<p>除此之外,A记录和CNAME记录还有其他的不同点,但我搭建博客的过程中没遇到,这里也就不过多介绍。</p>
+<h3 id="4-CDN加速"><a href="#4-CDN加速" class="headerlink" title="4 CDN加速"></a>4 CDN加速</h3><p>   现在域名有了,也可以解析到你的网站资源了,是时候给你的博客加加速了。国内的CDN加速门槛相比域名申请高的多,需要网站备案。而且网站备案也很麻烦,需要你手写保证书,还得拍一段申请人朗读保证书的视频,管局审批至少要等10天左右。但为了网站在国内的访问速度,该折腾还是得折腾的。。。</p>
+<p>​     行,不多哔哔,回到正题。关于CDN(Content Delivery Network 内容分发网络)，原理过于复杂,我也就了解它会把网站内容预先分发至全国各地的加速节点。这样用户就可以就近获取所需内容,避免网络拥堵、地域、运营商等因素带来的访问延迟问题，有效提升下载速度、降低响应时间，提供流畅的用户体验。(为啥这么官方,因为摘自百度百科),关于CDN加速,这里有一篇文章写的很好,讲的通俗易懂。</p>
+  <div class="note link green"><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg3MjA4MTExMw==&mid=2247486200&idx=1&sn=197c0905028104e1ae32dc6bed7941f5&chksm=cef5f94ef982705874cf1a852e2f3e4879e59cb0705d1aed5a12cd91f845fba1869b58cb8863&scene=21#wechat_redirect">漫话：如何给女朋友解释什么是CDN？</a></p></div>
+
+<p>总结:写到这就差不多了,其实还有一些零零碎碎的东西，比如不带WWW的域名级别一定是一级域名,带WWW的域名的域名级别可以是一级域名，也可以是二级域名啥的。也就不过多介绍,今天就摸啦摸啦。</p>
 
   
   
@@ -936,7 +973,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://egdondeblog.xyz/2021/08/09/hello-world/>http://egdondeblog.xyz/2021/08/09/hello-world/</a></p>
+                <p>本文永久链接是：<a href=http://egdondeblog.xyz/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/>http://egdondeblog.xyz/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/</a></p>
               
             
           </blockquote>
@@ -961,10 +998,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-13T21:11:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-15T21:28:12+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月13日</p>
+    <p>更新于：2021年8月15日</p>
   </a>
 </div>
 
@@ -972,6 +1009,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/WEB/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>WEB</p></a></div>
+
 
         
       
@@ -983,7 +1023,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://egdondeblog.xyz/2021/08/09/hello-world/&title=Hello World - Egdon's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://egdondeblog.xyz/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/&title=个人博客搭建记录-概念篇 - Egdon's Blog&summary="
           
           >
           
@@ -995,7 +1035,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://egdondeblog.xyz/2021/08/09/hello-world/&title=Hello World - Egdon's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://egdondeblog.xyz/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/&title=个人博客搭建记录-概念篇 - Egdon's Blog&summary="
           
           >
           
@@ -1007,7 +1047,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://egdondeblog.xyz/2021/08/09/hello-world/&title=Hello World - Egdon's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://egdondeblog.xyz/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/&title=个人博客搭建记录-概念篇 - Egdon's Blog&summary="
           
           >
           
@@ -1021,7 +1061,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class='hoverbox'>
           <a class='share'><img src="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/qrcode.png" class="lazyload" data-srcset="https://egdin.oss-cn-hangzhou.aliyuncs.com/webBackground/qrcode.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAADCElEQVR42u3aQW7kMAwEQP//09kPxLDYZLLmpHhzMJGl8qVB6vpS39aFAAwYMGDAgFkDc4V1u/DN7+6eT3//tP7UecCAAQMGDBgw+2COA9DhAZ8OnMKdwsTnAQMGDBgwYMCshekGr9PA9fT+0+f0w4EBAwYMGDBgwFQ3nK5f/RBgwIABAwYMGDBTDaVu46o6cAMDBgwYMGDA/D2YNFilF4mmDvi6SSQYMGDAgAED5tdgugHtbc/xecCAAQMGDBgwa2CmKg1s6cWjp/fF5wADBgwYMGDArIHpBqrTRtEpXDroS/cDBgwYMGDAgNkPkwanNNB1D1AdxB0PAsGAAQMGDBgwa2D+d1CbaoBVG1+3z2DAgAEDBgyYNTBTwat7gLQx1W2sHXfwwIABAwYMGDCvhekGpKmLQNWgmO4bDBgwYMCAAfN5MN3g1m1kdRtn1cBankSCAQMGDBgwYF4DU10gHaRdh5UO8NIgCAYMGDBgwIDZCzN24WZokDZ14ShtXIEBAwYMGDBg9sGkIKfrVINed4D3FRYYMGDAgAEDZh9M9aDTF3uqHyId+D2+DwwYMGDAgAGzDqY6AEsbTdUANtVIO26wgQEDBgwYMGDWwEwFq25DqXsxaHzgBgYMGDBgwIBZAzPVSJra6NRFpfJ7wYABAwYMGDBrYaqNpd8KhlONrMfACAYMGDBgwIBZA5MuXB3ApetXB3Pt/YEBAwYMGDBg1sCcBqCpQJY2nqYaXPEkEgwYMGDAgAHzOph0QDU18ErXvYp1HBTBgAEDBgwYMGtgujW1oTQgpuC3gRAMGDBgwIABswbmCqsaCKuNpNN1qus/PoMBAwYMGDBg1sF0A9hp0ErXnW6AgQEDBgwYMGA+D6Z6YSgdiFUD2Clc++ITGDBgwIABA+bPwJz+X/r7nwp2Px7wwIABAwYMGDCvh6k2mH4qQKYfAAwYMGDAgAHzOTDdgVs36HUbUN1BHRgwYMCAAQNmH8zU4CptZHX/nn7gx4AHBgwYMGDAgHktjLoJeAoMGDBgwIB5a/0DGXmgmVWNunYAAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,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">
           </div>
         </div>
       
@@ -1029,7 +1069,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
           
-            target="_blank" href="https://t.me/share/url?url=http://egdondeblog.xyz/2021/08/09/hello-world/&text=Hello World - Egdon's Blog"
+            target="_blank" href="https://t.me/share/url?url=http://egdondeblog.xyz/2021/08/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95-%E6%A6%82%E5%BF%B5%E7%AF%87/&text=个人博客搭建记录-概念篇 - Egdon's Blog"
           
           >
           
@@ -1060,6 +1100,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='content'>I2C通信原理初探以及MSP432代码实现​     之前有用过MPU6050的软件I2C,什么DMP自检不通过,零偏校准偏移,甚至还会因为杜邦线太长自检失败。种种玄学问题导致我长期以来对I2C...</p>
         </a>
       
+      
+        <a class='next' href='/2021/07/30/hello-world/'>
+          <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
       
     </div>
   
@@ -1101,7 +1146,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9F%9F%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">2 域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">3 域名解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-A%E8%AE%B0%E5%BD%95"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 A记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-CNAME"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 CNAME</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CDN%E5%8A%A0%E9%80%9F"><span class="toc-number">4.</span> <span class="toc-text">4 CDN加速</span></a></li></ol>
     </div>
   </section>
 
@@ -1120,7 +1165,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Hello World";
+  pdata.postTitle="个人博客搭建记录-概念篇";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
